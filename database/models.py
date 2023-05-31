@@ -11,6 +11,10 @@ class Pokemon(Base):
     type1 = Column(String(50))
     type2 = Column(String(50))
     generation = Column(Integer)
+    height_m = Column(Float)
+    weight_kg = Column(Float, nullable=True)
+    attack = Column(Float)
+    pokedex_no = Column(Integer)
 
     stats = relationship("PokemonStats", backref="pokemon", uselist=False)
 

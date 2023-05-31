@@ -6,6 +6,10 @@ class Pokemon(BaseModel):
     type1: str
     type2: str
     generation: int
+    height_m: float
+    weight_kg: float
+    attack: float
+    pokedex_no: int
 
     class Config():
         orm_mode =True

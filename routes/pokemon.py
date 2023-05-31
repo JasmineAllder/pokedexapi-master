@@ -16,7 +16,7 @@ def getPokemons(db: Session =Depends(get_db)):
 
 @router.post("/")
 def addPokemon (pokemon: Pokemon, db:Session= Depends(get_db)):
-    pokemonData = PokemonTableModel(name=pokemon.name, type1=pokemon.type1, classification=pokemon.classification, type2=pokemon.type2, generation=pokemon.generation)
+    pokemonData = PokemonTableModel(name=pokemon.name, type1=pokemon.type1, classification=pokemon.classification, type2=pokemon.type2, generation=pokemon.generation, height_m=pokemon.height_m, weight_kg=pokemon.weight_kg, attack=pokemon.attack, pokedex_no=pokemon.pokedex_no)
     db.add(pokemonData)
     db.commit()
     db.refresh(pokemonData)
